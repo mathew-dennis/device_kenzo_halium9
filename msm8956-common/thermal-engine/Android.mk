@@ -6,7 +6,7 @@
 LOCAL_PATH:= $(call my-dir)
 
 include $(CLEAR_VARS)
-LOCAL_USE_VNDK:= true
+#LOCAL_USE_VNDK:= true
 LOCAL_COPY_HEADERS_TO := thermal-engine
 LOCAL_COPY_HEADERS := ./thermal_client.h
 

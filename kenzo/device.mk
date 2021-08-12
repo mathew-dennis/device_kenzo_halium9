@@ -46,7 +46,7 @@ PRODUCT_COPY_FILES += \
 
 
 
-#--------ut----------------------
+#--------ut----------------------------
 
 
 
@@ -69,7 +69,7 @@ PRODUCT_PACKAGES += \
     libandroid \
     power.default \
     tls-padding \
-#--------ut----------------------
+#--------ut----------------------------
 
 # Inherit from msm8956-common
 $(call inherit-product, device/xiaomi/msm8956-common/msm8956.mk)
