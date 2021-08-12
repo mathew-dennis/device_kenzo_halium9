@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+            android:title="@string/graphics_title">
+
+        <PreferenceScreen
+                android:key="kcal"
+                android:fragment="com.lineageos.settings.kenzopref.DisplayCalibration"
+                android:summary="@string/kcal_summary"
+                android:title="@string/kcal_title" />
+
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="volte_pref"
+        android:title="@string/volte_pref_title" >
+        <SwitchPreference
+            android:key="persist.volte.fix"
+            android:defaultValue="false"
+            android:title="@string/volte_fix_title"
+            android:summary="@string/volte_fix_summary" />
+     </PreferenceCategory>
+
+</PreferenceScreen>

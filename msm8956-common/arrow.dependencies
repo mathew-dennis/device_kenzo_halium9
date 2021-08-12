@@ -1,0 +1,18 @@
+[
+  {
+    "repository": "android_kernel_xiaomi_msm8956",
+    "target_path": "kernel/xiaomi/msm8956"
+  },
+  {
+    "repository": "android_packages_resources_devicesettings",
+    "target_path": "packages/resources/devicesettings"
+  },
+  {
+    "repository": "android_device_xiaomi_kenzo",
+    "target_path": "device/xiaomi/kenzo"
+  },
+  {
+    "repository": "android_vendor_xiaomi_kenzo",
+    "target_path": "vendor/xiaomi"
+  }
+]
