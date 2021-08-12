@@ -43,7 +43,7 @@ TARGET_LD_SHIM_LIBS += \
 	/system/vendor/lib64/lib-imsvt.so|libshims_ims.so
 
 
-#--------ut----------------------
+#--------ut--------------------------
 
 # To enable system image
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
@@ -54,18 +54,18 @@ BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 #kernel
 BOARD_KERNEL_CMDLINE += console=tty0
 
-# Require for treble test 
-BOARD_VENDORIMAGE_PARTITION_SIZE := 482344960
-BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
-PRODUCT_FULL_TREBLE_OVERRIDE := true
-TARGET_COPY_OUT_VENDOR := vendor
-BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
+# Require for treble test failed
+#BOARD_VENDORIMAGE_PARTITION_SIZE := 482344960
+#BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
+#PRODUCT_FULL_TREBLE_OVERRIDE := true
+#TARGET_COPY_OUT_VENDOR := vendor
+#BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 
 # VNDK
 # PRODUCT_USE_VNDK_OVERRIDE := false
-BOARD_VNDK_VERSION := current
-BOARD_VNDK_RUNTIME_DISABLE := true
-#LOCAL_USE_VNDK:= true
-#-------------------------------
+#BOARD_VNDK_VERSION := current
+#BOARD_VNDK_RUNTIME_DISABLE := true
+
+#-------------------------------------
 # inherit from the proprietary version
 -include vendor/xiaomi/kenzo/BoardConfigVendor.mk
