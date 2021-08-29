@@ -45,7 +45,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
 
-#ut------------------------------------------------------------------------------
+#ut---------------------------------------------------------
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ubuntu/70-kenzo.rules:system/halium/etc/udev/rules.d/70-kenzo.rules \
     $(LOCAL_PATH)/ubuntu/config::system/halium/var/lib/lxc/android/config \
@@ -85,7 +85,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ubuntu/crash_dump.arm.policy:system/etc/seccomp_policy/crash_dump.arm.policy
     
     
-#--------ut----------------------------
+#--------ut----------------------
 
 # Inherit from msm8956-common
 $(call inherit-product, device/xiaomi/msm8956-common/msm8956.mk)
