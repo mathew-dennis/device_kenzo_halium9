@@ -50,8 +50,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ubuntu/70-kenzo.rules:system/halium/etc/udev/rules.d/70-kenzo.rules \
     $(LOCAL_PATH)/ubuntu/config::system/halium/var/lib/lxc/android/config \
     $(LOCAL_PATH)/ubuntu/android.conf::system/halium/etc/ubuntu-touch-session.d/android.conf \
-    $(LOCAL_PATH)/ubuntu/touch.pa:system/halium/etc/pulse/touch.pa  
-#   $(LOCAL_PATH)/ubuntu/rc.local:system/halium/etc/rc.local  
+    $(LOCAL_PATH)/ubuntu/touch.pa:system/halium/etc/pulse/touch.pa  \
+    $(LOCAL_PATH)/ubuntu/system/on-post-fs-data.rc:system/etc/init/on-post-fs-data.rc \
+    $(LOCAL_PATH)/ubuntu/system/on-post-fs-data.sh:system/bin/on-post-fs-data.sh \
+    $(LOCAL_PATH)/ubuntu/ril_subscription.conf:system/halium/etc/ofono/ril_subscription.conf \
+    $(LOCAL_PATH)/ubuntu/wifi.conf:system/halium/etc/init/wifi.conf  
     
 #missing dependenceess
 PRODUCT_PACKAGES += \
@@ -65,16 +68,24 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     miniafservice \
     libminisf \
-    android.hardware.radio@1.0 \
     android.hardware.contexthub@1.0 \
     android.hardware.media.omx@1.0-service \
     android.hardware.bluetooth@1.0 \
-    android.hardware.bluetooth.a2dp@1.0  
-#    rild 
+    android.hardware.bluetooth.a2dp@1.0 \
+    libbluetooth-binder\
+    libbluetooth \
+    libbluetooth_jni\
+    com.qualcomm.qti.bluetooth_audio@1.0_vendor \
+    libqdma_file_agent \
+    strace \
+    rild  
+#    android.hardware.radio@1.0  
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ubuntu/crash_dump.arm.policy:system/etc/seccomp_policy/crash_dump.arm.policy
     
+    
+#--------ut----------------------------
 
 # Inherit from msm8956-common
 $(call inherit-product, device/xiaomi/msm8956-common/msm8956.mk)
