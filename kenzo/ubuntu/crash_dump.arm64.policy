@@ -2,7 +2,6 @@ read: 1
 write: 1
 exit: 1
 rt_sigreturn: 1
-sigreturn: 1
 exit_group: 1
 clock_gettime: 1
 gettimeofday: 1
@@ -28,10 +27,10 @@ prctl: arg0 == PR_GET_NO_NEW_PRIVS || arg0 == 0x53564d41
 madvise: 1
 mprotect: arg2 in 0x1|0x2
 munmap: 1
-getuid32: 1
-fstat64: 1
-mmap2: arg2 in 0x1|0x2
-geteuid32: 1
-getgid32: 1
-getegid32: 1
-getgroups32: 1
+getuid: 1
+fstat: 1
+mmap: arg2 in 0x1|0x2
+geteuid: 1
+getgid: 1
+getegid: 1
+getgroups: 1

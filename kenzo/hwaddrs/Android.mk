@@ -1,7 +1,4 @@
-#!/bin/bash
-#
-# Copyright (C) 2015-2016 The CyanogenMod Project
-#           (C) 2017-2018 The LineageOS Project
+# Copyright (C) 2011-2015 The CyanogenMod project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,25 +11,16 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
 
-set -e
 
-# Required!
-export DEVICE=kenzo
-export DEVICE_COMMON=msm8956-common
-export VENDOR=xiaomi
+LOCAL_PATH:= $(call my-dir)
+include $(CLEAR_VARS)
 
-export DEVICE_BRINGUP_YEAR=2016
+LOCAL_MODULE_TAGS := optional
+LOCAL_SRC_FILES := hwaddrs.c
+LOCAL_PRELINK_MODULE := false
+LOCAL_MODULE := hwaddrs
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_LDLIBS := -llog
 
-function blob_fixup() {
-    case "${1}" in
-        vendor/lib/libui.so)
-            ;&
-        vendor/lib64/libui.so)
-            patchelf --add-needed "libutilscallstack.so" "${2}"
-            ;;
-    esac
-}
-
-./../../$VENDOR/$DEVICE_COMMON/extract-files.sh $@
+include $(BUILD_EXECUTABLE)

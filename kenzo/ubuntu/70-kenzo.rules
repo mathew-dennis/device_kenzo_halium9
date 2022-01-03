@@ -254,3 +254,11 @@ ACTION=="add", KERNEL=="block/platform/soc.0/7824900.sdhci/by-name/config", OWNE
 ACTION=="add", KERNEL=="kmsg", OWNER="root", GROUP="system", MODE="0620"
 ACTION=="add", KERNEL=="lirc0", OWNER="system", GROUP="system", MODE="0660"
 ACTION=="add", KERNEL=="fpc1020", OWNER="system", GROUP="system", MODE="0666"
+ACTION=="add", KERNEL=="video0", OWNER="system", GROUP="camera", MODE="0660"
+ACTION=="add", KERNEL=="media0", OWNER="system", GROUP="camera", MODE="0660"
+ACTION=="add", KERNEL=="dvb/adapter0/video0", OWNER="media", GROUP="media", MODE="0660"
+ACTION=="add", KERNEL=="/android/system/etc/ld.config.txt", OWNER="media", GROUP="media", MODE="0660"
+ACTION=="add", KERNEL=="android/system/etc/ld.config.txt", OWNER="media", GROUP="media", MODE="0660"
+ACTION=="add", KERNEL=="android/system/etc/ld.config.txt", OWNER="system", GROUP="camera", MODE="0660"
+ACTION=="add", KERNEL=="/android/system/etc/ld.config.txt", OWNER="system", GROUP="camera", MODE="0660"
+

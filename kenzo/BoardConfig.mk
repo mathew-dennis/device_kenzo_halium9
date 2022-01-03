@@ -38,6 +38,7 @@ TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
 # Sepolicy
 #BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
+BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy-minimal
 
 # Security patch level
 VENDOR_SECURITY_PATCH := 2018-07-01
@@ -47,13 +48,29 @@ VENDOR_SECURITY_PATCH := 2018-07-01
 # To enable system image
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 
-# Ramdisk
-#BOARD_ROOT_EXTRA_FOLDERS += firmware
-
+# Extra foldes
+BOARD_ROOT_EXTRA_FOLDERS := \
+    /firmware \
+    /dsp \
+    /cust \
+    /metadata \
+    /factory \
+    /persist
+    
 #kernel
 BOARD_KERNEL_CMDLINE += console=tty0
 
 
 #-----------------------------------
+
+#treble
+#BOARD_VNDK_RUNTIME_DISABLE := true
+#BOARD_VNDK_VERSION := current
+
+#PRODUCT_FULL_TREBLE_OVERRIDE := true
+#PRODUCT_SHIPPING_API_LEVEL := 22
+#PRODUCT_VENDOR_MOVE_ENABLED := true
+#TARGET_COPY_OUT_VENDOR := vendor
+
 # inherit from the proprietary version
 -include vendor/xiaomi/kenzo/BoardConfigVendor.mk
