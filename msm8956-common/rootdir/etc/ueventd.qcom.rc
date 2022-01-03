@@ -290,7 +290,15 @@
 /sys/devices/virtual/gesture/gesture*		enable	0660	input	system
 /sys/devices/virtual/gesture/gesture*		pocket	0660	input	system
 
- FPC
+# FPC
 /sys/devices/soc.0/fpc_fpc1020.*        irq             0660        system      system
 /sys/devices/soc.0/fpc_fpc1020.*        enable_wakeup   0660        system      system
 /dev/fpc1020              0666   system     system
+
+# test hash these out if something goes horebly wrong
+/system/etc/ld.config.txt  0660   system     audio
+/sys/kernel/random/boot_id 0660   system     audio
+/system/etc/ld.config.txt  0660   system     system
+/sys/kernel/random/boot_id 0660   system     system
+
+
